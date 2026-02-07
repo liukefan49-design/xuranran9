@@ -1,0 +1,11 @@
+# 缓存目录
+cache/
+logs/
+
+# 配置文件（可能包含敏感信息）
+config.php
+
+# 临时文件
+*.tmp
+*.log
+security_log.txt

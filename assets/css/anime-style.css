@@ -1,0 +1,649 @@
+/* 二次元风格样式表 - Anime Style CSS */
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --info-gradient: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    --primary-color: #667eea;
+    --secondary-color: #f5576c;
+    --text-color: #333;
+    --light-text: #999;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
+    --border-radius: 12px;
+}
+
+/* 全局样式 */
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* 导航栏 */
+.layui-layout-admin .layui-header {
+    background: var(--primary-gradient);
+    box-shadow: 0 2px 20px rgba(102, 126, 234, 0.3);
+}
+
+.layui-layout-admin .layui-logo {
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.layui-nav-tree .layui-nav-item.layui-nav-itemed > .layui-nav-child {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.layui-nav-tree .layui-nav-item a {
+    color: rgba(255, 255, 255, 0.85);
+    transition: all 0.3s ease;
+}
+
+.layui-nav-tree .layui-nav-item a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+}
+
+.layui-nav-tree .layui-nav-item.layui-this > a {
+    background: var(--secondary-gradient);
+    border-radius: 8px;
+    margin: 4px 8px;
+    font-weight: bold;
+}
+
+/* 卡片样式 */
+.anime-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.anime-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-gradient);
+}
+
+.anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.25);
+}
+
+/* 按钮样式 */
+.anime-btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.anime-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.anime-btn-secondary {
+    background: var(--secondary-gradient);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+}
+
+.anime-btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+}
+
+.anime-btn-success {
+    background: var(--success-gradient);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.anime-btn-danger {
+    background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* 统计卡片 */
+.stat-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card .stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.stat-card .stat-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.stat-card .stat-label {
+    font-size: 14px;
+    color: var(--light-text);
+}
+
+.stat-card.gradient-purple {
+    background: var(--primary-gradient);
+}
+
+.stat-card.gradient-purple .stat-value,
+.stat-card.gradient-purple .stat-label {
+    color: white;
+}
+
+.stat-card.gradient-pink {
+    background: var(--secondary-gradient);
+}
+
+.stat-card.gradient-pink .stat-value,
+.stat-card.gradient-pink .stat-label {
+    color: white;
+}
+
+.stat-card.gradient-blue {
+    background: var(--success-gradient);
+}
+
+.stat-card.gradient-blue .stat-value,
+.stat-card.gradient-blue .stat-label {
+    color: white;
+}
+
+.stat-card.gradient-green {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.stat-card.gradient-green .stat-value,
+.stat-card.gradient-green .stat-label {
+    color: white;
+}
+
+/* 表格样式 */
+.anime-table-container {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    overflow: hidden;
+}
+
+.anime-table-container .layui-table {
+    border-color: #eee;
+}
+
+.anime-table-container .layui-table th {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #666;
+    font-weight: 600;
+    border-color: #eee;
+}
+
+.anime-table-container .layui-table td {
+    border-color: #eee;
+    transition: all 0.3s ease;
+}
+
+.anime-table-container .layui-table tr:hover td {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+/* 表单样式 */
+.anime-form-group {
+    margin-bottom: 20px;
+}
+
+.anime-form-group .layui-form-label {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 6px;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+}
+
+.anime-form-group .layui-input,
+.anime-form-group .layui-select,
+.anime-form-group .layui-textarea {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.anime-form-group .layui-input:focus,
+.anime-form-group .layui-select:focus,
+.anime-form-group .layui-textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+}
+
+/* 弹窗样式 */
+.layui-layer {
+    border-radius: 12px !important;
+}
+
+.layui-layer-title {
+    background: var(--primary-gradient) !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 12px 12px 0 0;
+}
+
+.layui-layer-btn .layui-layer-btn0 {
+    background: var(--primary-gradient) !important;
+    border-radius: 6px;
+    border: none;
+}
+
+.layui-layer-btn .layui-layer-btn1 {
+    background: #fff !important;
+    color: #667eea !important;
+    border: 2px solid #667eea;
+    border-radius: 6px;
+}
+
+/* 徽章样式 */
+.anime-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.anime-badge-success {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: white;
+}
+
+.anime-badge-warning {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+}
+
+.anime-badge-danger {
+    background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+    color: white;
+}
+
+.anime-badge-info {
+    background: var(--success-gradient);
+    color: white;
+}
+
+/* 分页样式 */
+.anime-pagination .layui-laypage a,
+.anime-pagination .layui-laypage span {
+    border-radius: 8px;
+    margin: 0 5px;
+    border: none;
+}
+
+.anime-pagination .layui-laypage a:hover {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.anime-pagination .layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background: var(--primary-gradient);
+    border-radius: 8px;
+}
+
+/* 标签页样式 */
+.anime-tab .layui-tab-title {
+    background: white;
+    border-radius: 12px;
+    padding: 10px 20px 0;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.anime-tab .layui-tab-title li {
+    border-radius: 8px 8px 0 0;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.anime-tab .layui-tab-title .layui-this {
+    background: var(--primary-gradient);
+    color: white;
+    font-weight: bold;
+}
+
+.anime-tab .layui-tab-content {
+    background: white;
+    border-radius: 0 0 12px 12px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.anime-fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.anime-pulse:hover {
+    animation: pulse 0.5s ease infinite;
+}
+
+/* 加载动画 */
+.anime-loading {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(102, 126, 234, 0.2);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .stat-card {
+        padding: 20px;
+    }
+
+    .stat-card .stat-value {
+        font-size: 24px;
+    }
+
+    .anime-card {
+        padding: 20px;
+    }
+
+    .anime-table-container {
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    .anime-btn-primary,
+    .anime-btn-secondary {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+}
+
+/* 空状态 */
+.anime-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--light-text);
+}
+
+.anime-empty .empty-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.anime-empty .empty-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* 进度条 */
+.anime-progress {
+    height: 8px;
+    border-radius: 4px;
+    background: #e9ecef;
+    overflow: hidden;
+}
+
+.anime-progress-bar {
+    height: 100%;
+    background: var(--primary-gradient);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* 开关样式 */
+.anime-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.anime-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.anime-switch .switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 26px;
+}
+
+.anime-switch .switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.anime-switch input:checked + .switch-slider {
+    background: var(--primary-gradient);
+}
+
+.anime-switch input:checked + .switch-slider:before {
+    transform: translateX(24px);
+}
+
+/* 通知提示 */
+.anime-alert {
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.anime-alert-info {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    border-left: 4px solid #667eea;
+}
+
+.anime-alert-success {
+    background: rgba(67, 233, 123, 0.1);
+    color: #43e97b;
+    border-left: 4px solid #43e97b;
+}
+
+.anime-alert-warning {
+    background: rgba(250, 112, 154, 0.1);
+    color: #fa709a;
+    border-left: 4px solid #fa709a;
+}
+
+.anime-alert-danger {
+    background: rgba(235, 51, 73, 0.1);
+    color: #eb3349;
+    border-left: 4px solid #eb3349;
+}
+
+/* 头像样式 */
+.anime-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.anime-avatar-small {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+}
+
+.anime-avatar-large {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+}
+
+/* 时间线样式 */
+.anime-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.anime-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--primary-gradient);
+}
+
+.anime-timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 30px;
+}
+
+.anime-timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.anime-timeline-content {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.anime-timeline-time {
+    font-size: 12px;
+    color: var(--light-text);
+    margin-bottom: 5px;
+}
+
+.anime-timeline-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.anime-timeline-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
